@@ -1,9 +1,9 @@
 import React from 'react'
-import NavBar from '../Components/navBar'
-
+import SignIn from '../Components/userLogin'
 export default function HomePage() {
   return (
     <div>
+      <SignIn/>
     </div>
   )
 }

@@ -1,17 +1,21 @@
-import * as ReactDOMClient from 'react-dom/client';
-import HomePage from './Pages/homePage'
-import Login from './Components/userLogin'
-import SignUp from './Components/userSignUp';
-function App({ callback }) {
-  
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
+import NavBar from "./Components/navBar";
+
+export default function App() {
   return (
-    <div ref={callback}>  
-      <HomePage/>
-    </div>
+    <BrowserRouter>
+      <NavBar/>
+      <Routes>
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/signin" element={<SignUp/>} />
+          <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-const rootElement = document.getElementById("root");
-
-const root = ReactDOMClient.createRoot(rootElement);
-root.render(<App callback={() => console.log("renderered")} />);
+ReactDOM.render(<App />, document.getElementById("root"));
