@@ -7,8 +7,6 @@ function App({ callback }) {
   return (
     <div ref={callback}>  
       <HomePage/>
-      <Login/>
-      <SignUp/>
     </div>
   );
 }
