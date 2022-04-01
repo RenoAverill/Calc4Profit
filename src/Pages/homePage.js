@@ -1,9 +1,10 @@
 import React from 'react'
-import NavBar from '../Components/navBar'
+import RentalCalc from '../Components/Calcs/rentalCalc'
 
 export default function HomePage() {
   return (
     <div>
+      <RentalCalc/>
     </div>
   )
 }

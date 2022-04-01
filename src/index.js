@@ -5,7 +5,7 @@ import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import NavBar from "./Components/navBar";
 
-export default function App() {
+export function App() {
   return (
     <BrowserRouter>
       <NavBar/>
