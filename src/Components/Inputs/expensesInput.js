@@ -4,12 +4,14 @@ import Box from '@mui/material/Box';
 import PercentIcon from '@mui/icons-material/Percent';
 import InputAdornment from '@mui/material/InputAdornment';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import '../../index.css'
 
 export default function ExpensesInput() {
   return (
     <>
-    <h2>Expenses</h2>
+    <h2 className='header'>Expenses</h2>
       <Box
+        className='box'
         component="form"
         sx={{
           '& > :not(style)': { m: 1, width: '25ch' },
@@ -37,7 +39,7 @@ export default function ExpensesInput() {
               <AttachMoneyIcon/>
             </InputAdornment>
           )
-        }}/> 
+        }}type='number'/> 
         <TextField id="vacacy" label='Vacancy' variant="filled" InputProps={{
           startAdornment: (
             <InputAdornment position="start">

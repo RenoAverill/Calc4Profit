@@ -18,8 +18,8 @@ export default function LoanDetailInput() {
 
   return (
     <>
-      <h2>Loan Details</h2>
-      <Box component="form" sx={{
+      <h2 className='header'>Loan Details</h2>
+      <Box className='box' component="form" sx={{
           '& > :not(style)': { m: 1, width: '25ch' },
         }} noValidate autoComplete="off">
 

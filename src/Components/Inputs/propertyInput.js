@@ -14,8 +14,9 @@ export default function PropertyInput() {
 
   return (
     <>
-      <h2>Property Information</h2>
+      <h2 className='header'>Property Information</h2>
       <Box
+        className='box'
         component="form"
         sx={{
           '& > :not(style)': { m: 1, width: '25ch' },

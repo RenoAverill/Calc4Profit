@@ -8,8 +8,9 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 export default function LoanInput() {
   return (
     <>
-    <h2>Rental Income</h2>
+    <h2 className='header'>Rental Income</h2>
       <Box
+        className='box'
         component="form"
         sx={{
           '& > :not(style)': { m: 1, width: '25ch' },

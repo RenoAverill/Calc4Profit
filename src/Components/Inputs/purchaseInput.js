@@ -10,8 +10,9 @@ export default function PurchaseInput() {
 
   return (
     <>
-      <h2>Purchase Information</h2>
+      <h2 className='header'>Purchase Information</h2>
       <Box
+        className='box'
         component="form"
         sx={{
           '& > :not(style)': { m: 1, width: '25ch' },
@@ -25,14 +26,14 @@ export default function PurchaseInput() {
               <AttachMoneyIcon/>
             </InputAdornment>
           )
-        }}/> 
+        }}type='number'/> 
         <TextField id="purchaseClosingCost" label='Purchase Closing Cost' variant="filled" InputProps={{
           startAdornment: (
             <InputAdornment position="start">
               <PercentIcon/>
             </InputAdornment>
           )
-        }}/> 
+        }}type='number'/> 
       </Box>
     </>
   );
