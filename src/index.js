@@ -6,7 +6,6 @@ import SignUp from "./Pages/SignUp";
 import NavBar from "./Components/navBar";
 import addUsersCall from "./Backend/Services/userService";
 export function App() {
-    addUsersCall();
   return (
     <BrowserRouter>
       <NavBar/>
