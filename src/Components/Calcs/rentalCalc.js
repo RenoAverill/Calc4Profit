@@ -4,6 +4,7 @@ import PropertyInput from '../../Components/Inputs/propertyInput'
 import PurchaseInput from '../Inputs/purchaseInput';
 import LoanDetailInput from '../Inputs/loanDetailsinput';
 import RentalInput from '../Inputs/rentalInput'
+import ExpensesInput from '../Inputs/expensesInput';
 
 
 export default function RentalCalc() {
@@ -13,6 +14,7 @@ export default function RentalCalc() {
       <PurchaseInput/>
       <LoanDetailInput/>
       <RentalInput/>
+      <ExpensesInput/>
     </Box>
   );
 }

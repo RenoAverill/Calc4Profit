@@ -23,8 +23,8 @@ export default function PropertyInput() {
         noValidate
         autoComplete="off"
       >
-        <TextField id="streetAdress" placeholder='Street Address' variant="filled" /> 
-        <TextField id="city" placeholder='City' variant="filled" /> 
+        <TextField id="streetAdress" label='Street Address' variant="filled" /> 
+        <TextField id="city" label='City' variant="filled" /> 
           <TextField
             id="outlined-select-state"
             select
@@ -39,7 +39,7 @@ export default function PropertyInput() {
               </MenuItem>
             ))}
           </TextField>
-          <TextField id="city" placeholder='Zip' variant="filled" /> 
+          <TextField id="city" label='Zip' variant="filled" /> 
       </Box>
     </>
   );
