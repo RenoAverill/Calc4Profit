@@ -1,11 +1,12 @@
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./Pages/HomePage";
+import HomePage from "./Pages/homePage";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import NavBar from "./Components/navBar";
-
+import addUsersCall from "./Backend/Services/userService";
 export function App() {
+    addUsersCall();
   return (
     <BrowserRouter>
       <NavBar/>
