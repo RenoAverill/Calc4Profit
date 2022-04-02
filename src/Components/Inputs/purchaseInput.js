@@ -1,8 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
-import {states} from '../../Constants/states'
+import PercentIcon from '@mui/icons-material/Percent';
+import InputAdornment from '@mui/material/InputAdornment';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+
 
 export default function PurchaseInput() {
 
@@ -17,8 +19,20 @@ export default function PurchaseInput() {
         noValidate
         autoComplete="off"
       >
-        <TextField id="purchasePrice" placeholder='Purchase Price' variant="filled" /> 
-        <TextField id="purchaseClosingCost" placeholder='Purchase Closing Cost' variant="filled" /> 
+        <TextField id="purchasePrice" label='Purchase Price' variant="filled" InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <AttachMoneyIcon/>
+            </InputAdornment>
+          )
+        }}/> 
+        <TextField id="purchaseClosingCost" label='Purchase Closing Cost' variant="filled" InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <PercentIcon/>
+            </InputAdornment>
+          )
+        }}/> 
       </Box>
     </>
   );

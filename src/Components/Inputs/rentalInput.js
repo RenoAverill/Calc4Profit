@@ -1,6 +1,8 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import InputAdornment from '@mui/material/InputAdornment';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 
 export default function LoanInput() {
@@ -15,7 +17,13 @@ export default function LoanInput() {
         noValidate
         autoComplete="off"
       >
-        <TextField id="grossMonthlyIncome" placeholder='Gross Monthly Income' variant="filled" /> 
+        <TextField id="grossMonthlyIncome" label='Gross Monthly Income' variant="filled" InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <AttachMoneyIcon/>
+            </InputAdornment>
+          )
+        }}/> 
       </Box>
     
     </>

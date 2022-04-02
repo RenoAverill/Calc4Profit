@@ -4,7 +4,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-
+import PercentIcon from '@mui/icons-material/Percent';
+import InputAdornment from '@mui/material/InputAdornment';
 
 
 export default function LoanDetailInput() {
@@ -25,8 +26,14 @@ export default function LoanDetailInput() {
         noValidate
         autoComplete="off"
       >
-        <TextField id="interestRate" placeholder='Interest Rate %' variant="filled" /> 
-        <TextField id="loanTerm" placeholder='Loan Term' variant="filled" /> 
+        <TextField id="interestRate" label='Interest Rate' variant="filled" InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <PercentIcon/>
+            </InputAdornment>
+          )
+        }}/> 
+        <TextField id="loanTerm" label='Loan Term' variant="filled" /> 
       </Box>
     </FormGroup>
     
