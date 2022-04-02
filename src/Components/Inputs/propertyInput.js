@@ -39,7 +39,7 @@ export default function PropertyInput() {
               </MenuItem>
             ))}
           </TextField>
-          <TextField id="city" label='Zip' variant="filled" /> 
+          <TextField id="zip" label='Zip' variant="filled" type='number'/> 
       </Box>
     </>
   );
