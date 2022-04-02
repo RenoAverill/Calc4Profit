@@ -12,17 +12,70 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {auth} from '../Backend/Config/FirebaseConfig.js';
+
+import addUsersCall from '../Backend/Services/userService';
+import {useState} from 'react';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
 
 const theme = createTheme();
 
+
+//TODO: REFACTOR ALL CODE HERE TO SERVICE LAYER (AUTH SERVICE )
+
 export default function SignUp() {
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [user, setUser] = useState({});
+
+// TODO : auth.currentUser will give you credentials to know who is signed in, you can play with it here
+//prevents error from async changes in auth states
+  onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+//register function
+  const register = async (data) =>{
+      try {
+        const user = await createUserWithEmailAndPassword(
+          auth,
+          data.email,
+          data.password,
+          data.firstName,
+          data.lastName
+        );
+
+        console.log(user);
+      } catch (error) {
+      console.log(error )
+        alert(error.message)
+        console.log(error.message);
+      }
+    }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    let newUser = {
+          email: data.get('email')?data.get('email'):"",
+          password: data.get('password')?data.get('password'):"",
+          firstName: data.get('firstName')?data.get('firstName'):"",
+          lastName: data.get('lastName')?data.get('lastName'):"",
+    }
+    //register on auth AND add to database
+    addUsersCall(newUser);
+    register(newUser);
+  };
+
+
+//logout conditional function
+  const logout = async () => {
+    await signOut(auth);
   };
 
   return (
@@ -111,6 +164,16 @@ export default function SignUp() {
             </Grid>
           </Box>
         </Box>
+
+
+
+        //UGLY STATE MANAGEMENT
+        {
+        auth.currentUser?<button onClick ={logout}>Sign out</button>:""
+        }
+        <h4>User Logged In: </h4>
+        <h1>{auth.currentUser?auth.currentUser.email:""}</h1>
+
       </Container>
     </ThemeProvider>
   );
