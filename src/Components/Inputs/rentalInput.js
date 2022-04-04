@@ -6,6 +6,12 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 
 export default function LoanInput() {
+
+  const [grossMonthlyIncome, setGrossMonthlyIncome] = React.useState(0)
+
+  const onGrossMonthlyIncomeChange = (event) => {
+    setGrossMonthlyIncome(event.target.value)
+  }
   return (
     <>
     <h2 className='header'>Rental Income</h2>
@@ -24,7 +30,7 @@ export default function LoanInput() {
               <AttachMoneyIcon/>
             </InputAdornment>
           )
-        }}type='number'/> 
+        }}type='number' value={grossMonthlyIncome} onChange={onGrossMonthlyIncomeChange}/> 
       </Box>
     
     </>

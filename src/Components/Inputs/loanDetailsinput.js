@@ -13,6 +13,12 @@ export default function LoanDetailInput() {
   const onDownPaymentChange = (event) => {
     setDownPayment(event.target.value)
   }
+  const onInterestRateChange = (event) => {
+    setInterestRate(event.target.value)
+  }
+  const onLoanTermChange = (event) => {
+    setLoanTerm(event.target.value)
+  }
 
 
 
@@ -37,9 +43,9 @@ export default function LoanDetailInput() {
               <PercentIcon/>
             </InputAdornment>
           )
-        }} value={interestRate} type='number'/> 
+        }} value={interestRate} type='number' onChange={onInterestRateChange}/> 
 
-        <TextField id="loanTerm" label='Loan Term' variant="filled" value={loanTerm} type='number'/> 
+        <TextField id="loanTerm" label='Loan Term' variant="filled" value={loanTerm} type='number' onChange={onLoanTermChange}/> 
 
       </Box>    
     </>
