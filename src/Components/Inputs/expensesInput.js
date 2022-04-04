@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import PercentIcon from '@mui/icons-material/Percent';
 import InputAdornment from '@mui/material/InputAdornment';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import {ToggleMonthlyAnnual} from '../Toggles/monthlyAnnualToggle'
 import '../../index.css'
 
 export default function ExpensesInput() {
@@ -69,20 +70,26 @@ export default function ExpensesInput() {
         noValidate
         autoComplete="off"
       >
-        <TextField id="propertyTaxes" label='Property Taxes Annual' variant="filled"   InputProps={{
+        <TextField id="propertyTaxes" label='Property Taxes' variant="filled"   InputProps={{
           startAdornment: (
             <InputAdornment position="start">
               <AttachMoneyIcon/>
             </InputAdornment>
           )
         }}type='number' value={propertyTaxes} onChange={setPropertyTaxes}/> 
-        <TextField id="insurance" label='Insurance Annual' variant="filled"   InputProps={{
+
+        <ToggleMonthlyAnnual id='properyTaxesMonthlyAnnual'/>
+
+        <TextField id="insurance" label='Insurance' variant="filled"   InputProps={{
           startAdornment: (
             <InputAdornment position="start">
               <AttachMoneyIcon/>
             </InputAdornment>
           )
         }}type='number' value={insurrance} onChange={setInsurrance}/> 
+
+        <ToggleMonthlyAnnual id='insurranceMonthlyAnnual'/>
+
         <TextField id="repairsMaintenance" label='Repairs & Maintenance %' variant="filled"   InputProps={{
           startAdornment: (
             <InputAdornment position="start">
