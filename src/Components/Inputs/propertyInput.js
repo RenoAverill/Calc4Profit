@@ -6,10 +6,23 @@ import {states} from '../../Constants/states'
 
 export default function PropertyInput() {
 
-  const [stateCode, setStateCode] = React.useState('State')
+  const [streetAdress, setStreetAdress] = React.useState()
+  const [city, setCity] = React.useState()
+  const [stateCode, setStateCode] = React.useState()
+  const [zip, setZip] = React.useState()
 
-  const handleChange = (event) => {
+
+  const onStreetAdressChange = (event) => {
+    setStreetAdress(event.target.value);
+  };
+  const onCityChange = (event) => {
+    setCity(event.target.value);
+  };
+  const onStateCodeChange = (event) => {
     setStateCode(event.target.value);
+  };
+  const onZipChange = (event) => {
+    setZip(event.target.value);
   };
 
   return (
@@ -24,14 +37,14 @@ export default function PropertyInput() {
         noValidate
         autoComplete="off"
       >
-        <TextField id="streetAdress" label='Street Address' variant="filled" /> 
-        <TextField id="city" label='City' variant="filled" /> 
+        <TextField id="streetAdress" label='Street Address' variant="filled" value={streetAdress} onChange={onStateCodeChange}/> 
+        <TextField id="city" label='City' variant="filled" value={city} onChange={onCityChange} /> 
           <TextField
             id="outlined-select-state"
             select
             label="State"
             value={stateCode}
-            onChange={handleChange}
+            onChange={onStateCodeChange}
             helperText="Please select your State"
           >
             {states.map((state) => (
@@ -40,7 +53,7 @@ export default function PropertyInput() {
               </MenuItem>
             ))}
           </TextField>
-          <TextField id="zip" label='Zip' variant="filled" type='number'/> 
+          <TextField id="zip" label='Zip' variant="filled" type='number' value={zip} onChange={onZipChange}/> 
       </Box>
     </>
   );

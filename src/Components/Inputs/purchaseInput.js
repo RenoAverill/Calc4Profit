@@ -7,6 +7,15 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 
 export default function PurchaseInput() {
+  const [purchasePrice, setPurchasePrice] = React.useState(0)
+  const [purchaseClosingCost, setPurchaseClosingCost] = React.useState(0)
+
+  const onPurchasePriceChange = (event) => {
+    setPurchasePrice(event.target.value)
+  }
+  const onPurchaseClosingCostChange = (event) => {
+    setPurchaseClosingCost(event.target.value)
+  }
 
   return (
     <>
@@ -26,14 +35,14 @@ export default function PurchaseInput() {
               <AttachMoneyIcon/>
             </InputAdornment>
           )
-        }}type='number'/> 
+        }}type='number' value={purchasePrice} onChange={onPurchasePriceChange}/> 
         <TextField id="purchaseClosingCost" label='Purchase Closing Cost' variant="filled" InputProps={{
           startAdornment: (
             <InputAdornment position="start">
               <PercentIcon/>
             </InputAdornment>
           )
-        }}type='number'/> 
+        }}type='number' value={purchaseClosingCost} onChange={onPurchaseClosingCostChange}/> 
       </Box>
     </>
   );
