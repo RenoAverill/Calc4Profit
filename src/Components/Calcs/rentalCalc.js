@@ -5,6 +5,8 @@ import PurchaseInput from '../Inputs/purchaseInput';
 import LoanDetailInput from '../Inputs/loanDetailsinput';
 import RentalInput from '../Inputs/rentalInput'
 import ExpensesInput from '../Inputs/expensesInput';
+import { CalculateButton } from '../Toggles/calculateButton'
+import { Outputs } from '../outputs'
 
 
 export default function RentalCalc() {
@@ -15,6 +17,8 @@ export default function RentalCalc() {
       <LoanDetailInput/>
       <RentalInput/>
       <ExpensesInput/>
+      <CalculateButton/>
+      <Outputs/>
     </Box>
   );
 }

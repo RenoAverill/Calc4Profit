@@ -5,7 +5,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 
-export default function LoanInput() {
+function LoanInput() {
 
   const [grossMonthlyIncome, setGrossMonthlyIncome] = React.useState(0)
 
@@ -35,4 +35,7 @@ export default function LoanInput() {
     
     </>
   );
+
 }
+
+export default LoanInput

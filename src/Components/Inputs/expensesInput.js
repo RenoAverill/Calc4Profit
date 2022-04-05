@@ -160,6 +160,7 @@ export default function ExpensesInput() {
             </InputAdornment>
           )
         }}type='number' value={other} onChange={setOther}/> 
+
       </Box>
     </>
   );
